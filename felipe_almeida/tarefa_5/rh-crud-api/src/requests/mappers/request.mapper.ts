@@ -7,7 +7,6 @@ export class RequestMapper {
     entity.employeeName = dto.employeeName;
     entity.type = dto.type;
     entity.description = dto.description;
-    console.log('🔄 Mapper - Criando entidade:', entity);
     return entity;
   }
 }
