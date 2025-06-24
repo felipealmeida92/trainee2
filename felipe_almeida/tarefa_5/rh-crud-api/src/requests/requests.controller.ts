@@ -2,15 +2,20 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { RequestsService } from './requests.service';
 import { CreateRequestDto } from './dto/create-request.dto';
 import { UpdateRequestDto } from './dto/update-request.dto';
+import { ValidateRequestTypePipe } from './pipes/validate-request-type.pipe';
+
 
 @Controller('requests')
 export class RequestsController {
   constructor(private readonly requestsService: RequestsService) { }
 
   @Post()
-  create(@Body() createRequestDto: CreateRequestDto) {
+  create(
+    @Body(new ValidateRequestTypePipe()) createRequestDto: CreateRequestDto
+  ) {
     return this.requestsService.create(createRequestDto);
   }
+
 
   @Get()
   findAll() {
