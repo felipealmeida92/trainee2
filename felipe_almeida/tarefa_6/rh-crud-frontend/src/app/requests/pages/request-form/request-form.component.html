@@ -1,0 +1,48 @@
+<div class="container mt-5">
+  <h2 class="mb-4">{{ isEdit ? 'Editar Solicitação' : 'Nova Solicitação' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <!-- Campo Nome -->
+    <div class="mb-3">
+      <label for="employeeName" class="form-label">Nome</label>
+      <input
+        id="employeeName"
+        type="text"
+        class="form-control"
+        formControlName="employeeName"
+        placeholder="Digite o nome da solicitação"
+      />
+    </div>
+
+    <!-- Campo Descrição -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Descrição</label>
+      <textarea
+        id="description"
+        class="form-control"
+        rows="3"
+        formControlName="description"
+        placeholder="Descreva a solicitação"
+      ></textarea>
+    </div>
+
+    <!-- Campo Tipo -->
+    <div class="mb-3">
+      <label for="type" class="form-label">Tipo</label>
+      <select id="type" class="form-select" formControlName="type" required>
+        <option value="">Selecione...</option>
+        <option value="FÉRIAS">Férias</option>
+        <option value="AFASTAMENTO">Afastamento</option>
+        <option value="OUTROS">Outros</option>
+      </select>
+    </div>
+
+    <!-- Botões -->
+    <div class="d-flex">
+      <button type="submit" class="btn btn-primary me-2">
+        {{ isEdit ? 'Atualizar' : 'Criar' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>

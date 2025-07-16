@@ -16,7 +16,7 @@ export class RequestsService {
 
 
   async create(dto: CreateRequestDto): Promise<Request> {
-    const entity = this.requestRepository.create(dto); // aqui o TypeORM monta a entidade
+    const entity = this.requestRepository.create(dto);
     return this.requestRepository.save(entity);
   }
 
