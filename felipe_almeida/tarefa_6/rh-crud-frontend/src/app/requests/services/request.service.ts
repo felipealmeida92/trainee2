@@ -4,12 +4,12 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 export interface Request {
-  id: string; // ou number, dependendo do seu backend
+  id: string;
   employeeName: string;
   description: string;
-  type: 'FÉRIAS' | 'AFASTAMENTO' | 'OUTROS'; // ou apenas string
-  status: string; // se estiver sendo usado
-  createdAt?: string; // se vier do backend
+  type: 'FÉRIAS' | 'AFASTAMENTO' | 'OUTROS';
+  status: string;
+  createdAt?: string;
 }
 
 

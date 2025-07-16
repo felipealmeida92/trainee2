@@ -30,7 +30,7 @@ export class RequestFormComponent implements OnInit {
       const idParam = params.get('id');
       if (idParam) {
         this.isEdit = true;
-        this.id = idParam; // NÃO usar +idParam, pois é UUID (string)
+        this.id = idParam;
         this.requestService.getById(this.id).subscribe((data) => {
           this.form.patchValue(data);
         });
