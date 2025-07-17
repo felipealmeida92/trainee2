@@ -34,7 +34,7 @@ export class RequestService {
   }
 
   update(id: string, data: Omit<Request, 'id'>): Observable<Request> {
-    return this.http.put<Request>(`${this.API}/${id}`, data);
+    return this.http.patch<Request>(`${this.API}/${id}`, data);
   }
 
   delete(id: string): Observable<void> {
